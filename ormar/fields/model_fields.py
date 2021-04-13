@@ -349,7 +349,7 @@ class DateTime(ModelFieldFactory, datetime.datetime):
         :return: initialized column with proper options
         :rtype: sqlalchemy Column
         """
-        return sqlalchemy.DateTime()
+        return sqlalchemy.DateTime(timezone=kwargs.get("timezone", False))
 
 
 class Date(ModelFieldFactory, datetime.date):
